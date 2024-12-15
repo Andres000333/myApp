@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar> 
+    <ion-icon name="person" size="large" slot="start"></ion-icon>
+    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/notificacionescliente">
+        <ion-icon name="notifications"></ion-icon> 
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterRestaurants()" debounce="500" placeholder="Buscar"></ion-searchbar> 
+    <ion-item *ngFor="let restaurant of filterRestaurants()" (click)="goToRestaurantPage(restaurant.ruta)">
+      <ion-avatar slot="start">
+        <img [src]="restaurant.imagen">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ restaurant.nombre }}</h2>
+        <p>{{ restaurant.ubicacion }}</p>
+        <p>{{ restaurant.horario }}</p>
+      </ion-label>
+    </ion-item>
+</ion-content>

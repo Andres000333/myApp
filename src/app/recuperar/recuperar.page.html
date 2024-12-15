@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recuperacion de contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <p>Ingrese su correo electronico y le enviaremos los datos de su cuenta</p>
+  <form (ngSubmit)="sendRecoveryEmail()" #recoveryForm="ngForm">
+    <ion-item>
+      <ion-input 
+        [(ngModel)]="email" 
+        name="email" 
+        type="email" 
+        required 
+        email
+        #emailField="ngModel">
+      </ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="emailField.invalid && emailField.touched">
+    </ion-text>
+    <ion-button type="submit" [disabled]="recoveryForm.invalid">Enviar</ion-button>
+  </form>
+</ion-content>

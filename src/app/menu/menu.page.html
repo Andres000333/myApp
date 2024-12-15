@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/homerestaurante"></ion-back-button> 
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{ restaurantData?.nombre }}</ion-title> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngFor="let platillo of platillos">
+    <ion-card>
+      <ion-card-header>
+        <div class="platillo-header">
+          <div class="platillo-title">
+            <ion-card-title>{{ platillo.nombre }}</ion-card-title> 
+            <p><strong>Descripción:</strong> {{ platillo.descripcion }}</p>
+          </div>
+          <div class="platillo-img">
+            <ion-img [src]="platillo.imagen" alt="Imagen del Platillo"></ion-img> 
+          </div>
+        </div>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="platillo-description">
+          <p><strong>Precio:</strong> ${{ platillo.precio }}</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

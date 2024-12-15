@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button  defaultHref="/homecliente"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Centro de notificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="large-text">  <ion-label>Reservas pendientes</ion-label></div>
+
+  <ion-list>
+    <ion-item *ngFor="let notificacion of notificaciones; let i = index">
+      <ion-label>
+        <h2>Pedido del {{ notificacion.fecha | date: 'short' }}</h2>
+        <p>Status: {{ notificacion.status }}</p>
+        <ion-list>
+          <ion-item *ngFor="let item of notificacion.pedido">
+            {{ item.cantidad }} x {{ item.nombre }} - ${{ item.precio * item.cantidad }}
+          </ion-item>
+        </ion-list>
+      </ion-label>
+      <ion-button color="danger" fill="outline" slot="end" (click)="deleteNotification(i)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

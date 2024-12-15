@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/homecliente"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">{{ restaurantData.nombre }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="restaurante-info">
+    <ion-img [src]="restaurantData.imagen"></ion-img>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ restaurantData.tipoComida }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Ubicación:</strong> {{ restaurantData.ubicacion }}</p>
+        <p><strong>Horario:</strong> {{ restaurantData.horario }}</p>
+        <ion-button routerLink="/menu1">Ver Menú</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <p>{{ restaurantData.descripcion }}</p>
+</ion-content>

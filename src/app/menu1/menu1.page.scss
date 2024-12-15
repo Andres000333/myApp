@@ -1,0 +1,23 @@
+ion-card {
+    margin: 10px 0;
+  }
+  
+  ion-img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  ion-footer {
+    margin-top: 20px;
+    padding: 10px;
+  }
+.cart-button {
+    position:absolute;
+    bottom: 10px; 
+    right: 20px;
+    width: 30px; 
+    height: 30px;
+    --background: #3880ff; 
+    --color: white;
+}
+  

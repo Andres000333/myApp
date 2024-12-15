@@ -1,0 +1,47 @@
+
+<ion-content>
+  <div class="image-container">
+    <img src="assets/Usuario.png">
+  </div>
+  <form (ngSubmit)="loginUser()" #loginForm="ngForm">
+    <div class="form-container">
+      <ion-item>
+        <ion-label position="floating">Nombre de Usuario</ion-label>
+        <ion-input 
+          [(ngModel)]="username" 
+          name="username" 
+          required 
+          minlength="3"
+          #username="ngModel">
+        </ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="username.invalid && username.touched">
+      </ion-text>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input 
+          [(ngModel)]="password" 
+          name="password" 
+          type="password" 
+          required 
+          minlength="6"
+          #password="ngModel">
+        </ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="password.invalid && password.touched">
+      </ion-text>
+    </div>
+    <h1></h1>
+    <div style="text-align: center;">
+      <ion-text>
+        <a routerLink="/registro"> Registrarme </a>
+      </ion-text>
+      o
+      <ion-text>
+        <a routerLink="/recuperar"> Recuperar contraseña </a>
+      </ion-text>
+      <h1></h1>
+      <ion-button expand="center" type="submit" [disabled]="loginForm.invalid">Iniciar</ion-button>
+    </div>
+  </form>
+</ion-content>

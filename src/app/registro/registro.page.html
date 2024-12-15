@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;">Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="registerUser()" #registerForm="ngForm">
+    <ion-item>
+      <ion-label position="floating">Nombre de Usuario</ion-label>
+      <ion-input 
+        [(ngModel)]="user.username" 
+        name="username" 
+        required 
+        minlength="3"
+        #username="ngModel">
+      </ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="username.invalid && username.touched">
+      <p>El nombre de usuario debe tener al menos 3 caracteres.</p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Correo Electrónico</ion-label>
+      <ion-input 
+        [(ngModel)]="user.email" 
+        name="email" 
+        type="email" 
+        required 
+        email
+        #email="ngModel">
+      </ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="email.invalid && email.touched">
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input 
+        [(ngModel)]="user.password" 
+        name="password" 
+        type="password" 
+        required 
+        minlength="6"
+        #password="ngModel">
+      </ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="password.invalid && password.touched">
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Confirmar Contraseña</ion-label>
+      <ion-input 
+        [(ngModel)]="user.confirmPassword" 
+        name="confirmPassword" 
+        type="password" 
+        required 
+        #confirmPassword="ngModel">
+      </ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="user.password !== user.confirmPassword && confirmPassword.touched">
+    </ion-text>
+    <ion-item>
+      <ion-label>Tipo de Usuario</ion-label>
+      <ion-select 
+        [(ngModel)]="user.role" 
+        name="role" 
+        required 
+        #role="ngModel">
+        <ion-select-option value="cliente">Cliente</ion-select-option>
+        <ion-select-option value="restaurante">Restaurante</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-text color="danger" *ngIf="role.invalid && role.touched">
+    </ion-text>
+    <div style="text-align: center;">
+      <ion-label >
+        <a routerLink="/terminos">Términos y Condiciones</a>
+      </ion-label>
+    </div>
+    <ion-button type="submit" [disabled]="registerForm.invalid">Registrar</ion-button>
+  </form>
+</ion-content>

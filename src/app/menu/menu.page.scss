@@ -1,0 +1,35 @@
+ion-card {
+  margin-bottom: 20px;
+}
+
+ion-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+ion-card-header {
+  padding: 10px;
+  background-color: #020000;
+}
+
+.platillo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.platillo-title {
+  flex: 1;
+  font-weight: bold;
+}
+
+.platillo-img {
+  width: 30%;
+}
+
+.platillo-description {
+  margin-top: 10px;
+  font-size: 1.1em;
+}

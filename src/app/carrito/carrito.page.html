@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/homecliente"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Carrito de Compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let platillo of carrito">
+      <ion-thumbnail slot="start">
+        <img [src]="platillo.imagen" alt="Imagen del platillo" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ platillo.nombre }}</h2>
+        <p>{{ platillo.descripcion }}</p>
+        <p>Precio: ${{ platillo.precio }}</p>
+        <p>Cantidad: {{ platillo.cantidad }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="" (click)="proceedToCheckout()">Pagar</ion-button>
+</ion-content>

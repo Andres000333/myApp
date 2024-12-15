@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button> 
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{ restaurantData?.nombre }}</ion-title> 
+    <ion-buttons slot="end">
+      <ion-button routerLink="/notificaciones">
+        <ion-icon name="notifications"></ion-icon> 
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div class="restaurant-header">
+    <!-- Imagen del restaurante -->
+    <div class="restaurant-image-container">
+      <ion-img [src]="restaurantData?.imagen" alt="Imagen del Restaurante" class="restaurant-image"></ion-img>
+    </div>
+    <div class="restaurant-details">
+      <p><strong>Tipo de comida:</strong> {{ restaurantData?.tipoComida }}</p>
+      <p><strong>Ubicación:</strong> {{ restaurantData?.ubicacion }}</p>
+      <p><strong>Horario:</strong> {{ restaurantData?.horario }}</p>
+      <ion-button routerLink="/editar-menu" expand="full">Editar Menú</ion-button>
+    </div>
+  </div>
+  <div class="restaurant-description">
+    <p>{{ restaurantData?.descripcion }}</p>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" routerLink="/editar-restaurante">
+      <ion-icon name="create"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

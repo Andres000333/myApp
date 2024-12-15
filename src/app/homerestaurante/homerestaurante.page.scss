@@ -1,0 +1,35 @@
+.restaurant-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .restaurant-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .restaurant-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .restaurant-details {
+    flex: 2;
+    padding-left: 10px;
+  }
+  
+  .restaurant-description {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1.2em;
+  }
+  
+  ion-button {
+    margin-top: 10px;
+  }
+  

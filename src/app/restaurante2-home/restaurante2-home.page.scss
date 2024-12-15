@@ -1,0 +1,19 @@
+.restaurante-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  ion-img {
+    width: 40%;
+    border-radius: 10px;
+  }
+  
+  ion-card {
+    width: 55%;
+  }  
+  ion-card-title {
+    font-size: 1.5em;
+  }
+  

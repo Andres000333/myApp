@@ -1,0 +1,10 @@
+ion-item{
+    justify-content: center;
+    padding: 15px;
+}
+ion-button{
+    position: absolute;
+    bottom: 30px;
+    left: 50%; 
+    transform: translateX(-50%); 
+}
